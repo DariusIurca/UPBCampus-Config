@@ -51,6 +51,7 @@ wpa_supplicant -D wired -i $interfata -c /etc/config/wpa.conf &
 EOF
  echo "Conectati cablul de internet in portul WAN al router-ului (daca acesta nu este conectat deja)"
  echo -e "Pentru a continua apasati ENTER"
+ read con
  ifdown $interfata
  ifup $interfata
  echo "Configurarea s-a finalizat! Spor la internet!"
