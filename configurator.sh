@@ -46,8 +46,8 @@ echo start
 wpa_supplicant -D wired -i eth0.2 -c /etc/config/wpa.conf &
 }
 EOF
+echo "Configurarea s-a finalizat! Spor la internet!"
  chmod +x /etc/init.d/wpa-autostart
  /etc/init.d/wpa-autostart enable
  /etc/init.d/wpa-autostart start
-echo "Configurarea s-a finalizat! Spor la internet!"
 fi
