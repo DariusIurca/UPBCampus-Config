@@ -49,7 +49,11 @@ echo start
 wpa_supplicant -D wired -i $interfata -c /etc/config/wpa.conf &
 }
 EOF
-echo "Configurarea s-a finalizat! Spor la internet!"
+ echo "Conectati cablul de internet in portul WAN al router-ului (daca acesta nu este conectat deja)"
+ echo -e "Pentru a continua apasati ENTER"
+ ifdown $interfata
+ ifup $interfata
+ echo "Configurarea s-a finalizat! Spor la internet!"
  chmod +x /etc/init.d/wpa-autostart
  /etc/init.d/wpa-autostart enable
  /etc/init.d/wpa-autostart start
