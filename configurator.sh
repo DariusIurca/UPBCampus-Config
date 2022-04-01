@@ -8,6 +8,11 @@ echo -e "Continuati cu executarea acestui script? (da/nu): "
 read consent
 if [ $consent == "da" ];
 then
+ echo "Se curata configurarile trecute (daca acestea exista)"
+ /etc/init.d/wpa-autostart stop
+ /etc/init.d/wpa-autostart disable
+ rm -rf /etc/config/wpa.conf
+ rm -rf /etc/init.d/wpa-autostart
  echo "Se actualizeaza cache-ul managerului de pachete OPKG..."
  opkg update
  echo "Se instaleaza editorul Nano..."
