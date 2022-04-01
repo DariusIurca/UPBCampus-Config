@@ -12,8 +12,9 @@ then
  opkg update
  echo "Se instaleaza editorul Nano..."
  opkg install nano
- echo "Se sterge pachetul wpad-mini (daca acesta exista)..."
+ echo "Se sterge pachetul wpad-mini si wpad (daca acesta exista)..."
  opkg remove wpad-mini
+ opkg remove wpad
  echo "Se instaleaza pachetul wpad-openssl..."
  opkg install wpad-openssl
  echo "Configurare WPAD"
