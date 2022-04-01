@@ -35,6 +35,8 @@ network={
 }
 EOF
  echo "Configurare router"
+ echo -e "Introduceti numele interfetei wan (vizibila in meniul OpenWRT): "
+ read interfata
  cd /etc/init.d/
  cat > wpa-autostart <<EOF
 #!/bin/sh /etc/rc.common
@@ -43,7 +45,7 @@ START=99
 
 start() {
 echo start
-wpa_supplicant -D wired -i eth0.2 -c /etc/config/wpa.conf &
+wpa_supplicant -D wired -i $interfata -c /etc/config/wpa.conf &
 }
 EOF
 echo "Configurarea s-a finalizat! Spor la internet!"
